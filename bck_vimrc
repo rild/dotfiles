@@ -1,0 +1,28 @@
+set nocompatible
+set number 
+set tabstop=4  
+set autoindent 
+
+"filetype plugin indent off
+
+call neobundle#begin(expand('~/.vim/bundle')) 
+let g:neobundle_default_git_protocol='https’  
+NeoBundleFetch 'Shougo/neobundle.vim’ 
+
+NeoBundle 'kana/smartinput’  
+
+NeoBundleCheck  
+call neobundle#end()  
+
+if has('vim_starting')
+  set runtimepath+=/Users/rild/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('/Users/rild/.vim/bundle'))
+endif 
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+# 以下は必要に応じて追加
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+
+filetype plugin indent on
